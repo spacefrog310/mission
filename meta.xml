@@ -1,0 +1,8 @@
+<meta>
+    <info name="GtaNetwork" description="Test resource to play around with mines" />
+
+
+    <script src="GtaNetwork.cs" type="server" lang="csharp" />
+    <script src="create.cs" type="server" lang="csharp" />
+    <script src="set.cs" type="server" lang="csharp" />
+</meta>
