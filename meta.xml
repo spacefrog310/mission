@@ -1,5 +1,5 @@
 <meta>
-    <info name="GtaNetwork" description="Test resource to play around with mines" />
+    <info name="GtaNetwork" description="Test resource to play around with" />
 
 
     <script src="GtaNetwork.cs" type="server" lang="csharp" />
