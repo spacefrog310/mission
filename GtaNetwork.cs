@@ -16,13 +16,14 @@ namespace MissionTest
 
         public void myResourceStart( )
         {
-            API.consoleOutput("Starting script!");
-            
+            API.consoleOutput("Starting mission script!");
+
         }
 
-        public void startMission(Client sender ) 
+        [Command("start")]
+        public void startMission(Client sender) 
         {
-            
+             
             var curModel = API.getEntityModel(sender.CharacterHandle); // current player model
             var oldModel = API.pedNameToModel(Convert.ToString(curModel)); // the old player model (not sure)
             PedHash model = PedHash.GarbageSMY; // garbadge man model
