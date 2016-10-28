@@ -29,7 +29,6 @@ namespace MissionTest
             PedHash model = PedHash.GarbageSMY; // garbadge man model
             var create = new create();
             VehicleHash missionVeh = VehicleHash.Trash;
-            int missionVehInt = 1917016601; // 1917016601 = trash truck model
             Vector3 vehRot = new Vector3(0, 0, 0); // Vehicle rotation
 
             Vector3 missionStartCoord = sender.Position; // player position
@@ -41,7 +40,7 @@ namespace MissionTest
 
             startPoint.onEntityEnterColShape += (s, ent) =>
             {
-                create.mission(sender, model, missionStartCoord, missionDesCoord, missionVeh, vehRot, missionVehInt, oldModel);
+                create.mission(sender, model, missionStartCoord, missionDesCoord, missionVeh, vehRot, oldModel);
             };
 
         }

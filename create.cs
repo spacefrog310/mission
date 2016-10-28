@@ -40,7 +40,7 @@ namespace MissionTest
 
         }
 
-        public void mission(Client player, PedHash newPlayerModel, Vector3 missionStartCoord,Vector3 missionDesCoord,VehicleHash missionVeh,Vector3 vehRot, int missionVehInt, PedHash oldModel)
+        public void mission(Client player, PedHash newPlayerModel, Vector3 missionStartCoord,Vector3 missionDesCoord,VehicleHash missionVeh,Vector3 vehRot, PedHash oldModel)
         {
             var playerObj = new set();
             var create = new create();
@@ -50,13 +50,15 @@ namespace MissionTest
             
             shape.onEntityEnterColShape += (s, ent) =>
             {
+                
+                var curVeh = API.getEntityModel(player.CurrentVehicle);
+                var missionVehicle = API.getEntityModel(veh);
 
-                var curVeh = API.getEntityModel(player.CurrentVehicle); 
-
-                if (curVeh == missionVehInt) // not sure if this will work   //  missionvehint = 1917016601  (trash truck)
+                if (curVeh == missionVehicle) // not sure if this will work 
                 {
                      
                     playerObj.playerModel(player, oldModel); // not sure about this // oldModel = API.pedNameToModel(Convert.ToString(curModel));
+
                     API.warpPlayerOutOfVehicle(player, veh); // warp player out of vehicle
                     API.deleteEntity(veh); // Delete the vehicle
                     API.deleteColShape(shape); // Delete the mission destination shape
